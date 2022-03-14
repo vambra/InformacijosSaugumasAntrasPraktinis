@@ -41,6 +41,7 @@ namespace antrasPraktinis
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -105,7 +106,7 @@ namespace antrasPraktinis
             this.buttonFileRead.Name = "buttonFileRead";
             this.buttonFileRead.Size = new System.Drawing.Size(120, 30);
             this.buttonFileRead.TabIndex = 6;
-            this.buttonFileRead.Text = "Read from file";
+            this.buttonFileRead.Text = "Import from file";
             this.buttonFileRead.UseVisualStyleBackColor = true;
             this.buttonFileRead.Click += new System.EventHandler(this.buttonFileRead_Click);
             // 
@@ -137,14 +138,11 @@ namespace antrasPraktinis
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ECB",
-            "CBC",
-            "CFB"});
             this.comboBox1.Location = new System.Drawing.Point(437, 142);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -155,11 +153,21 @@ namespace antrasPraktinis
             this.label4.TabIndex = 11;
             this.label4.Text = "Mode:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 364);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(207, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Encrypted text as base64 string";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 390);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
@@ -193,6 +201,7 @@ namespace antrasPraktinis
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
