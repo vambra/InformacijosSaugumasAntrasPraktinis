@@ -49,8 +49,8 @@ namespace antrasPraktinis
                         cipherBytes = msEncrypt.ToArray();
                     }
                 }
-                return Convert.ToBase64String(cipherBytes);
-            }
+            return Convert.ToBase64String(cipherBytes);
+        }
             catch (Exception e)
             {
                 return "Error: " + e.Message;
@@ -62,7 +62,7 @@ namespace antrasPraktinis
             try
             {
                 string plainText = null;
-                byte[] cipherBytes = Convert.FromBase64String(cipherText);
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
 
                 ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
                 using (MemoryStream msDecrypt = new MemoryStream(cipherBytes))
